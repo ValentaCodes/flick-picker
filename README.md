@@ -6,41 +6,41 @@ The movie review site you've been losing sleep for.
 
 n/a
 
-## Tools
+## Tools 🛠
 
-HTML
+- HTML/CSS
 
-- update with css framework
+- [Bulma](https://bulma.io/)
 
-JavaScript
+- JavaScript
 
-[OMDB API](https://www.omdbapi.com/) - used to grab movie poster and ratings
+- [OMDB API](https://www.omdbapi.com/) - used to grab movie poster and ratings
 
-- update with second API
+- [Youtube API](https://developers.google.com/youtube/v3) - used to grab youtube videoID
 
-## About
+## About 📝
 
-Flick picker is a simple to use webpage that allows users to quickly find ratings for a flick from Rotten Tomatoes, Metacritic, and Internet Movie Database for that film. Not satisfied with critic rating? No problem! When you search for a film you will also be presented with the trailer. So you can quickly make a decision on watching the flick or not!
+Flick picker is a simple to use webpage that allows users to quickly find ratings from Rotten Tomatoes, Metacritic, and Internet Movie Database for that film. Not satisfied with critic rating? No problem! When you search for a film you will also be presented with the trailer. So you can quickly make a decision on watching the flick or not!
 
-## How to use
+## How to use 💡
 
 - Visit link below
 - Search movie title
 
 That's it! Sheeesh
 
-## Motivation
+## Motivation 🔍
 
 We love films, flicks, and movies alike. What we didn't love was scouring the internet for reliable and quick movie reviews.
 
-## Why?
+## Why? ❓
 
 Why Not?
 
-## Screenshots
+## Screenshots 📸
 
 - update when finished
 
-## Link
+## Link ⛓
 
 - update when finished
