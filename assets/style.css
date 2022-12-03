@@ -1,0 +1,8 @@
+#poster{
+    border: 5px solid;
+    flex-direction: column;
+
+}
+#re_score{
+    border: 2px solid;
+}
