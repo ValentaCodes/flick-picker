@@ -17,13 +17,20 @@ let getYoutubeData = () => {
       // console.log(data);
       // This retrieves the youtube video ID. for example www.youtube.com/watch?v=xxxxx
       let videoId = data.items[0].id.videoId;
+      let trailerEl = document.getElementById("video");
+      // CURRENTLY WORKING ON 📍
+      // trying to get youtube url to render with iframe, running into video loading
+      trailerEl.setAttribute(
+        "src",
+        `https://www.youtube.com/embed/watch?v=${videoId}`
+      );
       console.log(`youtube trailer url - www.youtube.com/watch?v=${videoId}`); //this logs the youtube url directly to corresponding trailer
     });
 };
 
 // function that gets needed data from OMDB
 let getOmdbData = () => {
-  let apiUrl = "http://www.omdbapi.com/?t="; //apiURL with title parameter at the end
+  let apiUrl = "https://www.omdbapi.com/?t="; //apiURL with title parameter at the end
   let OmdbApiKey = "&apikey=749bae52"; // apiKey
   let userSearch = movieSearch.value; //user search is the movie search bar value
   let result = apiUrl + userSearch + OmdbApiKey; // this concats all above information
