@@ -1,8 +1,18 @@
-#poster{
-    border: 5px solid;
-    flex-direction: column;
+#movieDashboard {
+    display: flex;
+    margin-top: 5%;
+}
 
+#searchBar {
+    margin-top: 5%;
+    width: 30%;
+    text-align: center;
 }
-#re_score{
-    border: 2px solid;
+
+.button {
+    margin-top: 15px;
 }
+
+/* #previousPosters {
+   
+} */
