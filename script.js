@@ -1,5 +1,6 @@
 let searchButton = document.getElementById("searchButton"); //Gets search button from HTML
 
+
 // This Api gets user data from Search input and returns JSON data
 let getYoutubeData = () => {
   let youtubeApiKey = "&key=AIzaSyAmVkvs3VVUOiXnF5hL7XGCk5kWBsxNLBY"; //Youtube API Key
@@ -43,6 +44,7 @@ let getOmdbData = () => {
       // console.log(data); I commented this out because I'm grabbing all relevant data below
       // this function loops through the data rating and grabs the ratings source "IMDB" and their rating "5.5/10"
       let grabMovieReviews = () => {
+      
         for (i = 0; i < data.Ratings.length; i++) {
           let ratingSource = data.Ratings[i].Source;
           let criticRatings = data.Ratings[i].Value;
@@ -82,7 +84,21 @@ let getOmdbData = () => {
 };
 
 // when search button is clicked fires API call functions
-searchButton.addEventListener("click", function () {
-  getYoutubeData();
-  getOmdbData();
-});
+searchButton.addEventListener("click", addResult);
+
+function main(){
+  //getYoutubeData();
+  //getOmdbData();
+  addResult();
+}
+
+function addResult(event){
+
+  //prevent default
+  event.preventDefault();
+  console.log(event);
+  
+  var searchRes = gdata + sInput.value;
+  gData.textContent = searchRes;
+}
+
