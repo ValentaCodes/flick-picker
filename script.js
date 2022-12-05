@@ -60,6 +60,7 @@ let getOmdbData = () => {
         }
       };
 
+
       //this function grabs movie data we will need to display
       let grabMovieData = () => {
         let movieGenre = data.Genre;
