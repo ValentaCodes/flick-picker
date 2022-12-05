@@ -18,12 +18,7 @@ let getYoutubeData = () => {
       // This retrieves the youtube video ID. for example www.youtube.com/watch?v=xxxxx
       let videoId = data.items[0].id.videoId;
       let trailerEl = document.getElementById("video");
-      // CURRENTLY WORKING ON 📍
-      // trying to get youtube url to render with iframe, running into video loading
-      trailerEl.setAttribute(
-        "src",
-        `https://www.youtube.com/embed/watch?v=${videoId}`
-      );
+      trailerEl.setAttribute("src", `https://www.youtube.com/embed/${videoId}`);
       console.log(`youtube trailer url - www.youtube.com/watch?v=${videoId}`); //this logs the youtube url directly to corresponding trailer
     });
 };
@@ -42,13 +37,29 @@ let getOmdbData = () => {
     .then(function (data) {
       // console.log(data); I commented this out because I'm grabbing all relevant data below
       // this function loops through the data rating and grabs the ratings source "IMDB" and their rating "5.5/10"
-      let grabMovieReviews = () => {
+      let grabMovieRatings = () => {
         for (i = 0; i < data.Ratings.length; i++) {
           let ratingSource = data.Ratings[i].Source;
           let criticRatings = data.Ratings[i].Value;
           console.log(`${ratingSource} - ${criticRatings}`); // this console.log shows us ratings and source
         }
+
+        if (data.Ratings <= 20) {
+          let flickMessage = document.getElementById("flickMessage"); // grabs text area from html
+          flickMessage.textContent = "Go Touch Grass"; //sets text area to string
+          console.log("Go Touch Grass");
+        } else if (data.Ratings >= 21 && data.Ratings <= 50) {
+          flickMessage.textContent = "Do Not Flick";
+          console.log("Do Not Flick");
+        } else if (data.Ratings >= 51 && data.Ratings <= 80) {
+          flickMessage.textContent = "Partial Flick";
+          console.log("Partial Flick");
+        } else {
+          flickMessage.textContent = "Certified Flick";
+          console.log("Certified Flick");
+        }
       };
+
       //this function grabs movie data we will need to display
       let grabMovieData = () => {
         let movieGenre = data.Genre;
@@ -66,8 +77,10 @@ let getOmdbData = () => {
         Runtime:${movieRuntime},
           `
         );
+        let posterEl = document.getElementById("currentMoviePoster");
+        posterEl.setAttribute("src", moviePosterUrl);
       };
-      grabMovieReviews();
+      grabMovieRatings();
       grabMovieData();
     });
 };
