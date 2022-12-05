@@ -48,7 +48,16 @@ let getOmdbData = () => {
           let criticRatings = data.Ratings[i].Value;
           console.log(`${ratingSource} - ${criticRatings}`); // this console.log shows us ratings and source
         }
-      };
+        //add "IF" statement
+        if (data.Ratings <= 20) {
+          console.log("Go Touch Grass");
+        } else if (data.Ratings >= 21 && data.Ratings <=50) {
+          console.log("Do Not Flick");
+        } else if (data.Ratings >=51 && data.Ratings <=80) {
+          console.log("Partial Flick");
+        } else {console.log("Certified Flick");
+        }
+       };
       //this function grabs movie data we will need to display
       let grabMovieData = () => {
         let movieGenre = data.Genre;
