@@ -1,64 +1,149 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Flick Picker</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
   <body>
-    <main class="container is-fluid">
-      <div class="columns">
+    <section class="hero is-warning">
+      <div class="hero-body has-text-centered">
+        <p class="title">Flick Picker</p>
+      </div>
+    </section>
+    <div class="tile is-ancestor">
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child box">
+          <p id="searchBar" class="title has-text-centered">Search A Flick</p>
+          <input
+            id="movieSearch"
+            class="input is-normal is-rounded"
+            type="text"
+            placeholder="Enter Movie title"
+          />
+          <button
+            id="searchButton"
+            class="button is-normal is-fullwidth is-rounded"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+        <div class="tile is-child is-8 box">
+          <p class="title is-4">Recently searched movies</p>
+          <nav class="" id="previousMoviePosters">
+            <p class="image has-text-centered">
+              <img src="https://bulma.io/images/placeholders/128x128.png" />Not
+              Taken
+            </p>
+            <p class="image has-text-centered">
+              <img
+                src="https://bulma.io/images/placeholders/128x128.png"
+              />Jumanji 12
+            </p>
+            <p class="image has-text-centered">
+              <img src="https://bulma.io/images/placeholders/128x128.png" />Boyz
+              not in the hood
+            </p>
+          </nav>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title has-text-centered">
+            placeholder text for if statements
+          </p>
 
-        <section id="searchBar" class="container is-fluid">
-          
-          <div class="box column is-centered">
-            <input id="movieSearch" class="input is-normal" type="text" placeholder="Enter Movie title">
-            <button  id="searchButton" class="button is-normal" type="submit">Search</button>
-          </div>
-          <div class="block title is-4">
-            Recently searched titles
-          </div>
-          <figure id="previousMoviePosters" class="image is-128x128 column is-half">
-            <img src="https://bulma.io/images/placeholders/128x128.png">Not Taken</img>
-            <img src="https://bulma.io/images/placeholders/128x128.png">Jumanji 12</img>
-            <img src="https://bulma.io/images/placeholders/128x128.png">Boyz not in the hood</img>
-            <img src="https://bulma.io/images/placeholders/128x128.png">Star Wars: The Return of Chewbacca</img>
-          </figure>
-        </section>
-
-        <section id="movieDashboard" class="container is-fluid">
-          <h1 class="title">Should you flick?</h1>
-          <section id="review" class="container is-fluid">
-            <div class="box column">
+          <section id="trailer" class="section is-small">
+            <figure class="">
+              <div class="level-item has-text-centered">
+                <img id="currentMoviePoster" src="" alt="Movie Poster" />
+                <iframe
+                  id="video"
+                  width="500"
+                  height="430"
+                  src=""
+                  title="YouTube Video Player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </figure>
+          </section>
+          <div class="tile is-child box">
+            <p class="title">Ratings and Reviews</p>
+            <section id="review" class="tile is-child">
               <article class="media">
                 <div class="media-left">
                   <figure class="image is-128x128">
-                     <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                   </figure>
+                    <img
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="Image"
+                    />
+                  </figure>
                 </div>
-                     <p>
-                       <strong>Review</strong>
-                       <br>
-                         Text space for the movie review.
-                     </p>
+                <article class="message">
+                  <div class="message-header">
+                    <p>Review:</p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <div class="message-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      <strong>Pellentesque risus mi</strong>, tempus quis
+                      placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit
+                      amet fringilla. Nullam gravida purus diam, et dictum
+                      <a>felis venenatis</a> efficitur. Aenean ac
+                      <em>eleifend lacus</em>, in mollis lectus. Donec sodales,
+                      arcu et sollicitudin porttitor, tortor urna tempor ligula,
+                      id porttitor mi magna a neque. Donec dui urna, vehicula et
+                      sem eget, facilisis sodales sem.
+                    </div>
+                  </nav>
+                </article>
               </article>
-            </div>
-          </section>
-        </section>
-      </div> 
+              <article id="ratings" class="tile is-child">
+                <div class="box">
+                  <nav class="level is-mobile">
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p class="heading">Site</p>
+                        <p class="title">Rating</p>
+                      </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p class="heading">Site</p>
+                        <p class="title">Rating</p>
+                      </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p class="heading">Site</p>
+                        <p class="title">Rating</p>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <section id="trailer" class="">
-          <figure class="">
-            <h1 class="title level-item has-text-centered">Trailer</h1>
-            <div class="level-item has-text-centered">
-                <!-- will remove the video later on, just keeping this in there to test that the embedding is working. -->
-                <iframe id="video" class="has-ratio level-item has-text-centered" width="350" height="200" src="" frameborder="0" allowfullscreen></iframe>
-              </div>
-          </figure>
-        </section>
-      </main>
-      <script src="./script.js"></script>
+    <footer class="footer">
+      <div class="title has-text-centered is-5">
+        Made with ❤️ by Andrew Olsen, Cornelius Davis, Kelsey O'Kelley, and
+        Miguel Atanacio.
+      </div>
+      <div class="subtitle has-text-centered">ALL RIGHTS RESERVED</div>
+    </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
