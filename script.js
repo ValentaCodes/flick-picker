@@ -44,14 +44,14 @@ let getOmdbData = () => {
           console.log(`${ratingSource} - ${criticRatings}`); // this console.log shows us ratings and source
         }
 
-        if (data.Ratings <= 20) {
+        if (data.ratings[1].value <= 20) {
           let flickMessage = document.getElementById("flickMessage"); // grabs text area from html
           flickMessage.textContent = "Go Touch Grass"; //sets text area to string
           console.log("Go Touch Grass");
-        } else if (data.Ratings >= 21 && data.Ratings <= 50) {
+        } else if (data.ratings[1].value >= 21 && data.ratings[1].value <= 50) {
           flickMessage.textContent = "Do Not Flick";
           console.log("Do Not Flick");
-        } else if (data.Ratings >= 51 && data.Ratings <= 80) {
+        } else if (data.ratings[1].value >= 51 && data.ratings[1].value <= 80) {
           flickMessage.textContent = "Partial Flick";
           console.log("Partial Flick");
         } else {
