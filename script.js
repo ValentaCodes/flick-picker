@@ -45,6 +45,7 @@ let getOmdbData = () => {
           console.log(`${ratingSource} - ${criticRatings}`); // this console.log shows us ratings and source
         }
 
+
         // these statements compare rotten tomatoes data and displays our flick suggestion
         let rottenTomatoRating = data.Ratings[1].Value; //grabs rotten data
         if (rottenTomatoRating < "20") {

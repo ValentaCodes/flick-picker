@@ -11,21 +11,22 @@
     />
   </head>
   <body>
-    <section style="background-color: rgb(144, 50, 61);" class="hero">
+    <section class="hero">
       <div class="hero-body has-text-centered">
-        <p class="title">Flick Picker</p>
+        <div id="flickPicker" class="tile is-child box">
+        <p id="flickText" class="title">Flick Picker</p>
       </div>
     </section>
-    <div class="tile is-ancestor">
+    <div id="ancestor" class="tile is-ancestor">
       <div class="tile is-4 is-vertical is-parent">
-        <div class="tile is-child box">
+        <div id="searchArea" class="tile is-child box">
           <p id="searchBar" class="title has-text-centered">Search A Flick</p>
           <input
             id="movieSearch"
             name="movieSearch"
             class="input is-normal is-rounded"
             type="text"
-            placeholder="Enter Movie title"
+            placeholder="Enter Movie Title"
           />
           <button
             id="searchButton"
@@ -35,8 +36,8 @@
             Search
           </button>
         </div>
-        <div class="tile is-child is-8 box">
-          <p class="title is-4">Recently searched movies</p>
+        <div id="recentArea" class="tile is-child is-8 box">
+          <p class="title is-4">Recently Searched Movies</p>
           <nav class="" id="previousMoviePosters">
             <p class="image has-text-centered">
               <img src="https://bulma.io/images/placeholders/128x128.png" />
@@ -53,9 +54,10 @@
         </div>
       </div>
       <div class="tile is-parent">
-        <div class="tile is-child box">
+        <div id="flickArea" class="tile is-child box">
           <p id="flickMessage" class="title has-text-centered">
             Should you flick?
+            <hr style="background-color: rgb(144, 50, 61);">
           </p>
           <section id="trailer" class="section is-small">
             <figure class="">
@@ -75,9 +77,9 @@
             </figure>
           </section>
           <section>
-            <div class="tile is-child box">
+            <div id="overviewBox" class="tile is-child box">
               <p class="title">Overview</p>
-              <article id="ratings" class="tile is-child">
+              <article id="overview" class="tile is-child">
                 <div class="box">
                   <nav class="level is-mobile">
                     <div class="level-item has-text-centered">
@@ -118,7 +120,7 @@
               </article>    
           </section>
           <br>
-          <div class="tile is-child box">
+          <div id="randrBox" class="tile is-child box">
             <p class="title">Ratings and Reviews</p>
             <section id="review" class="tile is-child">
               <article class="media">
@@ -167,7 +169,7 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
+    <footer id="foot" class="footer">
       <div class="title has-text-centered is-5">
         Made with ❤️ by Andrew Olsen, Cornelius Davis, Kelsey O'Kelley, and
         Miguel Atanacio.
