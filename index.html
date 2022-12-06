@@ -75,6 +75,48 @@
               </div>
             </figure>
           </section>
+          <section>
+            <div class="tile is-child box">
+              <p class="title">Overview</p>
+              <article id="ratings" class="tile is-child">
+                <div class="box">
+                  <nav class="level is-mobile">
+                    <div class="level-item has-text-centered">
+                      <div>
+                          <p id="genre" class="title">Genre</p>
+                        </div>
+                      </div>
+                      <div class="level-item has-text-centered">
+                        <div>
+                          <p id="rated" class="heading">(PG PG-13 R)</p>
+                          <p class="title">Rated</p>
+                        </div>
+                      </div>
+                      <div class="level-item has-text-centered">
+                        <div>
+                          <p id="runtime" class="title">Runtime</p>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </article>
+                <br>
+                <article class="message">
+                  <div class="message-header">
+                    <p>Plot</p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <div id="plotMessage" class="message-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Quas sequi quasi nesciunt voluptas dolores dolor perferendis 
+                      incidunt dolore molestias aut? Corrupti laborum quibusdam 
+                      fuga iste voluptatibus veritatis quidem earum voluptas?
+                    </div>
+                </article>
+                <br>
+              </article>    
+          </section>
+          <br>
           <div class="tile is-child box">
             <p class="title">Ratings and Reviews</p>
             <section id="review" class="tile is-child">
@@ -84,16 +126,11 @@
                     <p>Review</p>
                   </div>
                   <nav class="level is-mobile">
-                    <div class="message-body">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      <strong>Pellentesque risus mi</strong>, tempus quis
-                      placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit
-                      amet fringilla. Nullam gravida purus diam, et dictum
-                      <a>felis venenatis</a> efficitur. Aenean ac
-                      <em>eleifend lacus</em>, in mollis lectus. Donec sodales,
-                      arcu et sollicitudin porttitor, tortor urna tempor ligula,
-                      id porttitor mi magna a neque. Donec dui urna, vehicula et
-                      sem eget, facilisis sodales sem.
+                    <div id="reviewMessage" class="message-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Quas sequi quasi nesciunt voluptas dolores dolor perferendis 
+                      incidunt dolore molestias aut? Corrupti laborum quibusdam 
+                      fuga iste voluptatibus veritatis quidem earum voluptas?
                     </div>
                   </nav>
                 </article>
@@ -104,20 +141,20 @@
                   <nav class="level is-mobile">
                     <div class="level-item has-text-centered">
                       <div>
-                        <p class="heading">Site</p>
-                        <p class="title">Rating</p>
+                        <p class="heading">IMDb</p>
+                        <p id="imdbRating" class="title"></p>
                       </div>
                     </div>
                     <div class="level-item has-text-centered">
                       <div>
-                        <p class="heading">Site</p>
-                        <p class="title">Rating</p>
+                        <p class="heading">Rotten Tomatoes</p>
+                        <p id="rottenRating" class="title"></p>
                       </div>
                     </div>
                     <div class="level-item has-text-centered">
                       <div>
-                        <p class="heading">Site</p>
-                        <p class="title">Rating</p>
+                        <p class="heading">Metacritic</p>
+                        <p id="metaRating" class="title"></p>
                       </div>
                     </div>
                   </nav>
