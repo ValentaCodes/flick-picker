@@ -23,6 +23,7 @@
           <p id="searchBar" class="title has-text-centered">Search A Flick</p>
           <input
             id="movieSearch"
+            name="movieSearch"
             class="input is-normal is-rounded"
             type="text"
             placeholder="Enter Movie Title"
@@ -39,17 +40,15 @@
           <p class="title is-4">Recently Searched Movies</p>
           <nav class="" id="previousMoviePosters">
             <p class="image has-text-centered">
-              <img src="https://bulma.io/images/placeholders/128x128.png" />Not
-              Taken
+              <img src="https://bulma.io/images/placeholders/128x128.png" />
             </p>
             <p class="image has-text-centered">
               <img
                 src="https://bulma.io/images/placeholders/128x128.png"
-              />Jumanji 12
+              />
             </p>
             <p class="image has-text-centered">
-              <img src="https://bulma.io/images/placeholders/128x128.png" />Boyz
-              not in the hood
+              <img src="https://bulma.io/images/placeholders/128x128.png" />
             </p>
           </nav>
         </div>
@@ -85,18 +84,20 @@
                   <nav class="level is-mobile">
                     <div class="level-item has-text-centered">
                       <div>
-                          <p id="genre" class="title">Genre</p>
+                          <p id="genre" class="title"></p>
+                          <p class="heading">Genre</p>
                         </div>
                       </div>
                       <div class="level-item has-text-centered">
                         <div>
-                          <p id="rated" class="heading">(PG PG-13 R)</p>
-                          <p class="title">Rated</p>
+                          <p id="rated" class="title"></p>
+                          <p class="heading">Rated</p>
                         </div>
                       </div>
                       <div class="level-item has-text-centered">
                         <div>
-                          <p id="runtime" class="title">Runtime</p>
+                          <p id="runtime" class="title"></p>
+                          <p class="heading">length</p>
                         </div>
                       </div>
                     </nav>
@@ -127,6 +128,7 @@
                   <div class="message-header">
                     <p>Review</p>
                   </div>
+                  <div class="subtitle is-8">NEW YORK TIMES</div>
                   <nav class="level is-mobile">
                     <div id="reviewMessage" class="message-body">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -143,20 +145,20 @@
                   <nav class="level is-mobile">
                     <div class="level-item has-text-centered">
                       <div>
-                        <p class="heading">IMDb</p>
                         <p id="imdbRating" class="title"></p>
+                        <p class="heading">IMDb</p>
                       </div>
                     </div>
                     <div class="level-item has-text-centered">
                       <div>
-                        <p class="heading">Rotten Tomatoes</p>
                         <p id="rottenRating" class="title"></p>
+                        <p class="heading">Rotten Tomatoes</p>
                       </div>
                     </div>
                     <div class="level-item has-text-centered">
                       <div>
-                        <p class="heading">Metacritic</p>
                         <p id="metaRating" class="title"></p>
+                        <p class="heading">Metacritic</p>
                       </div>
                     </div>
                   </nav>

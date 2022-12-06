@@ -1,4 +1,5 @@
 let searchButton = document.getElementById("searchButton"); //Gets search button from HTML
+let previousMoviePoster = [];
 
 // This Api gets user data from Search input and returns JSON data
 let getYoutubeData = () => {
@@ -44,14 +45,17 @@ let getOmdbData = () => {
           console.log(`${ratingSource} - ${criticRatings}`); // this console.log shows us ratings and source
         }
 
-        if (data.ratings[1].value <= 20) {
+
+        // these statements compare rotten tomatoes data and displays our flick suggestion
+        let rottenTomatoRating = data.Ratings[1].Value; //grabs rotten data
+        if (rottenTomatoRating < "20") {
           let flickMessage = document.getElementById("flickMessage"); // grabs text area from html
           flickMessage.textContent = "Go Touch Grass"; //sets text area to string
           console.log("Go Touch Grass");
-        } else if (data.ratings[1].value >= 21 && data.ratings[1].value <= 50) {
+        } else if (rottenTomatoRating > "21" && rottenTomatoRating < "50") {
           flickMessage.textContent = "Do Not Flick";
           console.log("Do Not Flick");
-        } else if (data.ratings[1].value >= 51 && data.ratings[1].value <= 80) {
+        } else if (rottenTomatoRating > "51" && rottenTomatoRating < "80") {
           flickMessage.textContent = "Partial Flick";
           console.log("Partial Flick");
         } else {
@@ -59,8 +63,6 @@ let getOmdbData = () => {
           console.log("Certified Flick");
         }
       };
-
-
       //this function grabs movie data we will need to display
       let grabMovieData = () => {
         let movieGenre = data.Genre;
@@ -78,16 +80,69 @@ let getOmdbData = () => {
         Runtime:${movieRuntime},
           `
         );
+        // Initializes variables needed to display API from HTML
         let posterEl = document.getElementById("currentMoviePoster");
+        let genreEl = document.getElementById("genre");
+        let ratingEl = document.getElementById("rated");
+        let runtimeEl = document.getElementById("runtime");
+        let plotEl = document.getElementById("plotMessage");
+        let imdbEl = document.getElementById("imdbRating");
+        let rottenEl = document.getElementById("rottenRating");
+        let metaEl = document.getElementById("metaRating");
+        // Sets text area with data
+        imdbEl.textContent = `${data.Ratings[0].Value}`;
+        rottenEl.textContent = `${data.Ratings[1].Value}`;
+        metaEl.textContent = `${data.Ratings[2].Value}`;
+        plotEl.textContent = data.Plot;
+        genreEl.textContent = data.Genre;
+        ratingEl.textContent = data.Rated;
+        runtimeEl.textContent = data.Runtime;
         posterEl.setAttribute("src", moviePosterUrl);
+        // sets url poster data in localStorage
+        previousMoviePoster.push(data.Poster);
+        localStorage.setItem("poster", JSON.stringify(previousMoviePoster));
+        // console.log(previousMoviePoster)
       };
       grabMovieRatings();
       grabMovieData();
     });
 };
 
+const poster = JSON.parse(localStorage.getItem("poster")) || [];
+
+// posterEl[1].setAttribute('src', )
+// sets previous user input in localStorage
+let setMovieHistory = () => {
+  let previousSearchedMovies = [{ movie: movieSearch.value }];
+  localStorage.setItem("movie", JSON.stringify(movie));
+  movie.push(previousSearchedMovies);
+};
+const movie = JSON.parse(localStorage.getItem("movie")) || [];
+
 // when search button is clicked fires API call functions
 searchButton.addEventListener("click", function () {
   getYoutubeData();
   getOmdbData();
+  setMovieHistory();
+  // getNytData();
 });
+
+// function getNytData(){
+//   let apiUrl = "https://api.themoviedb.org/3/search/movie?";
+//   let movieDatabaseApi = "api_key=f20b350a17e1a84ff4f6a673acb57504&query=";
+//   let movieDatabaseInformation = '&language=en-US&page=1&include_adult=false&region=us';
+//   let userSearch = movieSearch.value;
+//   let result = apiUrl + movieDatabaseApi + encodeURI(userSearch) + movieDatabaseInformation
+
+//   fetch(result)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//       //used to grab the contents from the API Request
+//     let movieReview = data.results[0].id
+//         console.log(data)
+//         console.log(movieReview)
+//       })
+
+// }
