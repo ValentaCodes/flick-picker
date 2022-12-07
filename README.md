@@ -56,8 +56,12 @@ THEN the previous searched movies will be displayed with clickable posters under
 
 ## Screenshots 📸
 
-- update when finished
+![screenshot 1](./assets/images/screenshot-1.png)
+
+![screenshot 2](./assets/images/screenshot-2.png)
+
+![screenshot 3](./assets/images/screenshot-3.png)
 
 ## Link ⛓
 
-- update when finished
+[Deployed Link](https://valentacodes.github.io/flick-picker/)
