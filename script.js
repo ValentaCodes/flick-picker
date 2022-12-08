@@ -1,6 +1,6 @@
 let searchButton = document.getElementById("searchButton"); //Gets search button from HTML
-let previousMoviePoster = [];
-let previousSearchedMovies = [];
+let previousMoviePoster = []; // initializes empty array for previous poster storage
+let previousSearchedMovies = []; // initializes empty array for movie title storage
 
 // This Api gets user data from Search input and returns Youtube data
 let getYoutubeData = () => {
@@ -14,9 +14,6 @@ let getYoutubeData = () => {
       return response.json();
     })
     .then(function (data) {
-      // commented out log below out because I'm grabbing what we need already.
-      // No need for digging! uncomment log below if you want to see full API data
-      // console.log(data);
       // This retrieves the youtube video ID. for example www.youtube.com/watch?v=xxxxx
       let videoId = data.items[0].id.videoId;
       let trailerEl = document.getElementById("video");
@@ -37,7 +34,6 @@ let getOmdbData = () => {
       return response.json();
     })
     .then(function (data) {
-      // console.log(data); I commented this out because I'm grabbing all relevant data below
       // this function loops through the data rating and grabs the ratings source "IMDB" and their rating "5.5/10"
       let grabMovieRatings = () => {
         for (i = 0; i < data.Ratings.length; i++) {
@@ -89,6 +85,7 @@ let getOmdbData = () => {
         let imdbEl = document.getElementById("imdbRating");
         let rottenEl = document.getElementById("rottenRating");
         let metaEl = document.getElementById("metaRating");
+
         // Sets text area with data
         imdbEl.textContent = `${data.Ratings[0].Value}`;
         rottenEl.textContent = `${data.Ratings[1].Value}`;
@@ -109,10 +106,11 @@ let getOmdbData = () => {
       grabMovieRatings();
       grabMovieData();
       grabPreviousMoviePoster();
+      grabPreviousMovieTitle();
     });
 };
 
-// grabs poster from storage
+// grabs poster from storage and sets in recent
 let grabPreviousMoviePoster = () => {
   let poster = JSON.parse(localStorage.getItem("poster"));
   let imageEl = document.getElementsByTagName("img");
@@ -120,35 +118,18 @@ let grabPreviousMoviePoster = () => {
   imageEl[1].setAttribute("src", poster.at(-2));
   imageEl[2].setAttribute("src", poster.at(-3));
 };
-// grabs movie title from storage
-const movie = JSON.parse(localStorage.getItem("movie")) || [];
 
-// posterEl[1].setAttribute('src', )
-// sets previous user input in localStorage
+// grabs movie title from storage and sets it to corresponding movie
+let grabPreviousMovieTitle = () => {
+  let movie = JSON.parse(localStorage.getItem("movie"));
+  let prevMovieEl = document.querySelectorAll("#prevMovieTitle");
+  prevMovieEl[0].textContent = movie.at(-1);
+  prevMovieEl[1].textContent = movie.at(-2);
+  prevMovieEl[2].textContent = movie.at(-3);
+};
 
 // when search button is clicked fires API call functions
 searchButton.addEventListener("click", function () {
   getYoutubeData();
   getOmdbData();
-  // getNytData();
 });
-
-// function getNytData(){
-//   let apiUrl = "https://api.themoviedb.org/3/search/movie?";
-//   let movieDatabaseApi = "api_key=f20b350a17e1a84ff4f6a673acb57504&query=";
-//   let movieDatabaseInformation = '&language=en-US&page=1&include_adult=false&region=us';
-//   let userSearch = movieSearch.value;
-//   let result = apiUrl + movieDatabaseApi + encodeURI(userSearch) + movieDatabaseInformation
-
-//   fetch(result)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//       //used to grab the contents from the API Request
-//     let movieReview = data.results[0].id
-//         console.log(data)
-//         console.log(movieReview)
-//       })
-
-// }
