@@ -1,4 +1,3 @@
-// Welcome adding this comment for debugging
 let searchButton = document.getElementById("searchButton"); //Gets search button from HTML
 let previousMoviePoster = []; // initializes empty array for previous poster storage
 let previousSearchedMovies = []; // initializes empty array for movie title storage
@@ -134,5 +133,3 @@ searchButton.addEventListener("click", function () {
   getYoutubeData();
   getOmdbData();
 });
-// hey hey
-// goodbye for now
