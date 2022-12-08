@@ -1,3 +1,4 @@
+// Welcome
 let searchButton = document.getElementById("searchButton"); //Gets search button from HTML
 let previousMoviePoster = [];
 let previousSearchedMovies = [];
