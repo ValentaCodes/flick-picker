@@ -134,3 +134,5 @@ searchButton.addEventListener("click", function () {
   getYoutubeData();
   getOmdbData();
 });
+
+// goodbye for now
