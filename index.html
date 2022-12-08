@@ -16,9 +16,11 @@
         <div id="flickPicker" class="tile is-child box">
           <p id="flickText" class="title">Flick Picker</p>
         </div>
+        <!-- below div tag was missing here to close 15-->
       </div>
     </section>
     <div id="ancestor" class="tile is-ancestor">
+      <!-- changed size, was "is-4" -->
       <div class="tile is-3 is-vertical is-parent">
         <div id="searchArea" class="tile is-child box">
           <p id="searchBar" class="title has-text-centered">Search A Flick</p>
@@ -37,35 +39,31 @@
             Search
           </button>
         </div>
+        <!-- removed size was "is-8" -->
         <div id="recentArea" class="tile is-child box">
           <p class="title is-4">Recently Searched Movies</p>
           <nav class="" id="previousMoviePosters">
             <p class="image has-text-centered">
+              <!-- added placeholders and alt tags for accessibility -->
               <img
+                id="previousPoster"
                 src="https://m.media-amazon.com/images/M/MV5BNTM4NjIxNmEtYWE5NS00NDczLTkyNWQtYThhNmQyZGQzMjM0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
                 alt="Movie Poster"
               />
             </p>
-            <p id="prevMovieTitle" class="subtitle has-text-centered is-3">
-              Wakanda Forever
-            </p>
             <p class="image has-text-centered">
               <img
+                id="previousPoster"
                 src="https://m.media-amazon.com/images/M/MV5BNjA3NGExZDktNDlhZC00NjYyLTgwNmUtZWUzMDYwMTZjZWUyXkEyXkFqcGdeQXVyMTU1MDM3NDk0._V1_SX300.jpg"
                 alt="Movie Poster"
               />
             </p>
-            <p id="prevMovieTitle" class="subtitle has-text-centered is-3">
-              Avatar
-            </p>
             <p class="image has-text-centered">
               <img
+                id="previousPoster"
                 src="https://m.media-amazon.com/images/M/MV5BZmRjNDI5NTgtOTIwMC00MzJhLWI4ZTYtMmU0ZTE3ZmRkZDNhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
                 alt="Movie Poster"
               />
-            </p>
-            <p id="prevMovieTitle" class="subtitle has-text-centered is-3">
-              Boyz N The Hood
             </p>
           </nav>
         </div>
@@ -75,6 +73,7 @@
           <p id="flickMessage" class="title has-text-centered">
             Should you flick?
           </p>
+          <!-- moved p tag above hr tag to properly close string -->
           <hr style="background-color: rgb(144, 50, 61)" />
           <section id="trailer" class="section is-small">
             <figure class="">
@@ -84,6 +83,8 @@
                   src="https://m.media-amazon.com/images/M/MV5BNTM4NjIxNmEtYWE5NS00NDczLTkyNWQtYThhNmQyZGQzMjM0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
                   alt="Movie Poster"
                 />
+                <!-- changed video height and width -->
+                <!-- added youtube placeholder -->
                 <iframe
                   id="video"
                   width="700"
@@ -100,27 +101,26 @@
           <section>
             <div id="overviewBox" class="tile is-child box">
               <p class="title">Overview</p>
-              <article id="overview" class="tile is-child">
-                <div class="box">
-                  <nav class="level is-mobile">
+              <article class="tile is-child">
+                <div id="overview" class="box">
+                  <nav id="overview-1" class="level is-mobile">
+                    <!-- added placeholder Genre, Rated, Length -->
                     <div class="level-item has-text-centered">
                       <div>
-                        <p id="genre" class="title is-5">
-                          Action, Adventure, Drama
-                        </p>
+                        <p id="genre" class="title">Action, Adventure, Drama</p>
                         <p class="heading">Genre</p>
                       </div>
                     </div>
                     <div class="level-item has-text-centered">
                       <div>
-                        <p id="rated" class="title is-5">PG-13</p>
+                        <p id="rated" class="title">PG-13</p>
                         <p class="heading">Rated</p>
                       </div>
                     </div>
                     <div class="level-item has-text-centered">
                       <div>
-                        <p id="runtime" class="title is-5">161 m</p>
-                        <p class="heading">length</p>
+                        <p id="runtime" class="title">161 m</p>
+                        <p class="heading">Length</p>
                       </div>
                     </div>
                   </nav>
@@ -128,29 +128,53 @@
               </article>
               <br />
               <article class="message">
+                <div id="plotBorder" class="box">
                 <div class="message-header">
                   <p>Plot</p>
                 </div>
                 <nav class="level is-mobile">
-                  <div id="plotMessage" class="message-body">
+                  <!-- added placeholder plot -->
+                  <div id="plotMessageBody" class="message-body">
                     The people of Wakanda fight to protect their home from
                     intervening world powers as they mourn the death of King
                     T'Challa.,
                   </div>
+                  <!-- was missing closing nav tag -->
                 </nav>
+                </div>
               </article>
-              <br />
+              <!-- </article> -->
+              <!-- div below was missing article above was an extra-->
             </div>
           </section>
           <br />
-          <div id="randrBox" class="tile is-child box">
-            <p class="title has-text-centered">Ratings</p>
+          <div id="ratingsBox" class="tile is-child box">
+            <p class="title">Ratings and Reviews</p>
             <section id="review" class="tile is-child">
-              <article id="ratings" class="tile is-child">
-                <div class="box">
+              <article class="media">
+                <article class="message">
+                  <div class="message-header">
+                    <p>Review</p>
+                  </div>
+                  <div class="subtitle is-8">NEW YORK TIMES</div>
                   <nav class="level is-mobile">
+                    <div id="reviewMessage" class="message-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quas sequi quasi nesciunt voluptas dolores dolor
+                      perferendis incidunt dolore molestias aut? Corrupti
+                      laborum quibusdam fuga iste voluptatibus veritatis quidem
+                      earum voluptas?
+                    </div>
+                  </nav>
+                </article>
+              </article>
+              <br />
+              <article class="tile is-child">
+                <div id="ratings" class="box">
+                  <nav id="ratings-1" class="level is-mobile">
                     <div class="level-item has-text-centered">
                       <div>
+                        <!-- added placeholder for IMDB,Rotten,Meta -->
                         <p id="imdbRating" class="title">7.3/10</p>
                         <p class="heading">IMDb</p>
                       </div>
