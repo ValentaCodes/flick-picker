@@ -1,3 +1,4 @@
+// Welcome
 let searchButton = document.getElementById("searchButton"); //Gets search button from HTML
 let previousMoviePoster = []; // initializes empty array for previous poster storage
 let previousSearchedMovies = []; // initializes empty array for movie title storage
