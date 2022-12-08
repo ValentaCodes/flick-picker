@@ -72,12 +72,12 @@ body {
     background-color: rgb(188, 128, 52);
 }
 
-#currentMoviePoster {
-    border-radius: 3%;
-}
-
 #trailer {
     align-items: center;
+}
+
+#currentMoviePoster {
+    border-radius: 3%;
 }
 
 #video {
@@ -92,6 +92,7 @@ body {
 
 #overview {
     background-color: rgb(144, 50, 61);
+    padding: .5%;
 }
 
 #overview-1 {
@@ -100,6 +101,7 @@ body {
 
 #plotBorder {
     background-color: rgb(144, 50, 61);
+    padding: .5%;
 }
 
 #plotMessageBody {
@@ -114,6 +116,7 @@ body {
 
 #ratings {
     background-color: rgb(144, 50, 61);
+    padding: .5%;
 }
 
 #ratings-1 {
