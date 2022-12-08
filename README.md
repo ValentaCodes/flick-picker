@@ -24,7 +24,7 @@ Have you ever found yourself spending more tiime researching a movie than you wo
 
 If this applies to you (and even if it doesnt) then look no further! 
 
-Flick picker is an easy to use webpage that allows users to quickly find ratings from: Rotten Tomatoes, Metacritic, and Internet Movie Database for that film. Not satisfied with critic rating? No problem! When you search for a film you will also be presented with the trailer, a summary of the plot, as well as the ratings. So you can spend more time popping popcorn, than researching a flick!
+Flick picker is an easy-to-use webpage that allows users to quickly find ratings from: Rotten Tomatoes, Metacritic, and Internet Movie Database for that film. Not satisfied with critic rating? No problem! When you search for a film you will also be presented with the trailer, a summary of the plot, as well as the ratings. So you can spend more time popping popcorn, than researching a flick!
 
 ## How to use 💡
 
