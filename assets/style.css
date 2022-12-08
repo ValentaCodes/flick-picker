@@ -1,9 +1,10 @@
-
+/* Top Box */
 #flickPicker {
     background-color: rgb(188, 128, 52);
     box-shadow: 10px 5px 5px rgb(140, 122, 107);
 }
 
+/*Underlined "Flick Picker" */
 #flickText {
     color: rgb(94, 11, 21);
     font-size: 80px;
@@ -30,11 +31,9 @@ body {
     color: rgb(94, 11, 21);
     font-size: 40px;
     font-weight: 1000;
-    text-decoration: underline;
     margin-top: 5%;
     width: auto;
-    text-align: center;
-    
+    text-align: center;   
 }
 
 /* Enter Movie Title */
@@ -72,17 +71,23 @@ body {
     background-color: rgb(188, 128, 52);
 }
 
-
+#previousPoster {
+    border-radius: 5%;
+    margin-top: 4%;
+}
 
 #trailer {
-
+    align-items: center;
 }
 
 #currentMoviePoster {
+    border-radius: 3%;
 
 }
 
 #video {
+    border-radius: 3%;
+    margin-left: 3%;
 
 }
 
