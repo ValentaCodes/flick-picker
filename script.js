@@ -4,10 +4,10 @@ let previousSearchedMovies = []; // initializes empty array for movie title stor
 
 // This Api gets user data from Search input and returns Youtube data
 let getYoutubeData = () => {
-  let youtubeApiKey = "&key=AIzaSyAmVkvs3VVUOiXnF5hL7XGCk5kWBsxNLBY"; //Youtube API Key
-  let youtubeApiInformation = "trailer&type=video&order=relevance&maxResults=1"; // API parameters that allows use to receive most relevant title
   let apiUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="; //main youtube API URL
   let userSearch = movieSearch.value;
+  let youtubeApiInformation = "trailer&type=video&order=relevance&maxResults=1"; // API parameters that allows use to receive most relevant title
+  let youtubeApiKey = "&key=AIzaSyAmVkvs3VVUOiXnF5hL7XGCk5kWBsxNLBY"; //Youtube API Key
   let result = apiUrl + userSearch + youtubeApiInformation + youtubeApiKey;
   fetch(result)
     .then(function (response) {
@@ -132,4 +132,16 @@ let grabPreviousMovieTitle = () => {
 searchButton.addEventListener("click", function () {
   getYoutubeData();
   getOmdbData();
+});
+
+// adds key listener so users can search a movie when they hit the enter key
+const input = document.querySelector("input");
+
+input.addEventListener("keydown", (event) => {
+  const keyName = event.key;
+
+  if (keyName === "Enter") {
+    getYoutubeData();
+    getOmdbData();
+  }
 });
