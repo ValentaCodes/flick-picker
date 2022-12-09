@@ -1,3 +1,7 @@
+* {
+  font-family: "Cormorant Garamond", serif;
+}
+
 /* Top Box */
 #flickPicker {
   background-color: rgb(188, 128, 52);
@@ -41,12 +45,26 @@ body {
 #movieSearch {
   background-color: rgb(217, 202, 179);
 }
-
+#movieSearch:focus {
+  color: rgb(94, 11, 21);
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
 /* Search */
 #searchButton {
   background-color: rgb(217, 202, 179);
 }
-
+#searchButton:hover {
+  transform: scale(1.05);
+  transition: 1s;
+  background-color: rgb(94, 11, 21);
+  color: rgb(217, 202, 179);
+}
+#trending:hover {
+  transform: rotate(360deg);
+  transition: 1s;
+  color: rgb(94, 11, 21);
+}
 #recentArea {
   background-color: rgb(188, 128, 52);
   box-shadow: 10px 5px 5px rgb(140, 122, 107);
