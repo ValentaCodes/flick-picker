@@ -18,6 +18,10 @@ n/a
 
 - [Youtube API](https://developers.google.com/youtube/v3) - used to grab youtube videoID
 
+- [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
+
+-[Google Fonts](https://fonts.google.com/)
+
 ## About 📝
 
 Have you ever found yourself spending more tiime researching a movie than you would have spent watching the movie itself? 
