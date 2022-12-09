@@ -20,7 +20,7 @@ n/a
 
 - [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
 
--[Google Fonts](https://fonts.google.com/)
+- [Google Fonts](https://fonts.google.com/)
 
 ## About 📝
 
