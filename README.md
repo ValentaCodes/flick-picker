@@ -70,6 +70,9 @@ THEN the previous searched movies will be displayed with clickable posters under
 
 ![screenshot 3](./assets/images/screenshot-3.png)
 
+![Trending1](./assets/images/trending1.png)
+![Trending2](./assets/images/trending2.png)
+
 ## Link ⛓
 
-[Deployed Link](https://valentacodes.github.io/flick-picker/)
+[Deployed Link](https://loquacious-florentine-c87ce2.netlify.app)
