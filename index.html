@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Flick Picker</title>
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -27,6 +27,7 @@
           rgb(94, 11, 21),
           rgb(217, 202, 179)
         );
+        text-decoration: underline;
       "
     >
       <div class="navbar-brand">
@@ -112,6 +113,14 @@
           <section id="trailer" class="section is-small">
             <figure class="">
               <div class="level-item has-text-centered">
+                <!-- THIS IMAGE TAG HOLDS OUR ERROR IMAGE -->
+                <img
+                  class="image is-hidden"
+                  id="errorPoster"
+                  src="/assets/images/poster.jpg"
+                  alt=""
+                  hidden
+                />
                 <img
                   id="currentMoviePoster"
                   src="https://m.media-amazon.com/images/M/MV5BNTM4NjIxNmEtYWE5NS00NDczLTkyNWQtYThhNmQyZGQzMjM0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
@@ -166,11 +175,12 @@
                     <p>Plot</p>
                   </div>
                   <nav class="level is-mobile">
-                    <!-- plot -->
                     <div id="plotMessage" class="message-body subtitle is-4">
-                      The people of Wakanda fight to protect their home from
-                      intervening world powers as they mourn the death of King
-                      T'Challa.,
+                      <p>
+                        The people of Wakanda fight to protect their home from
+                        intervening world powers as they mourn the death of King
+                        T'Challa.,
+                      </p>
                     </div>
                   </nav>
                 </div>
@@ -210,11 +220,13 @@
     </div>
     <footer id="foot" class="footer">
       <div class="title has-text-centered is-5">
-        Made with ❤️ by Andrew Olsen, Cornelius Davis, Kelsey O'Kelley, and
-        Miguel Atanacio.
+        <p>
+          Made with ❤️ by Andrew Olsen, Cornelius Davis, Kelsey O'Kelley, and
+          Miguel Atanacio.
+        </p>
       </div>
-      <div class="subtitle has-text-centered">ALL RIGHTS RESERVED</div>
+      <p class="subtitle has-text-centered">ALL RIGHTS RESERVED</p>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
