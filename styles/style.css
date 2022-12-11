@@ -1,0 +1,152 @@
+* {
+  font-family: "Cormorant Garamond", serif;
+}
+p,h1,h2,h3,h4,h5,h6 {
+  cursor: default;
+}
+/* Top Box */
+#flickPicker {
+  background-color: rgb(188, 128, 52);
+  box-shadow: 10px 5px 5px rgb(140, 122, 107);
+}
+
+/*Underlined "Flick Picker" */
+#flickText {
+  color: rgb(94, 11, 21);
+  font-size: 80px;
+  font-weight: 1000;
+  text-decoration: underline;
+  margin-bottom: 1%;
+}
+
+#ancestor {
+  background-color: rgb(217, 202, 179);
+}
+
+body {
+  background-color: rgb(217, 202, 179);
+}
+
+#searchArea {
+  background-color: rgb(188, 128, 52);
+  height: fit-content;
+  box-shadow: 10px 5px 5px rgb(140, 122, 107);
+}
+
+/* Search a Flick */
+#searchBar {
+  color: rgb(94, 11, 21);
+  font-size: 40px;
+  font-weight: 1000;
+  margin-top: 5%;
+  width: auto;
+  text-align: center;
+}
+
+/* Enter Movie Title */
+#movieSearch {
+  background-color: rgb(217, 202, 179);
+}
+#movieSearch:focus {
+  color: rgb(94, 11, 21);
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
+/* Search */
+#searchButton {
+  background-color: rgb(217, 202, 179);
+}
+#searchButton:hover {
+  transform: scale(1.05);
+  transition: 1s;
+  background-color: rgb(94, 11, 21);
+  color: rgb(217, 202, 179);
+}
+#trending:hover {
+  transform: rotate(360deg);
+  transition: 1s;
+  color: rgb(94, 11, 21);
+}
+#recentArea {
+  background-color: rgb(188, 128, 52);
+  box-shadow: 10px 5px 5px rgb(140, 122, 107);
+}
+
+#previousPoster {
+  border-radius: 5%;
+  margin-top: 4%;
+}
+
+#flickArea {
+  background-color: rgb(188, 128, 52);
+  box-shadow: 10px 5px 5px rgb(140, 122, 107);
+}
+
+#flickMessage {
+  color: rgb(94, 11, 21);
+  font-size: 40px;
+  font-weight: 1000;
+  margin-top: 5%;
+  width: auto;
+  text-align: center;
+  background-color: rgb(188, 128, 52);
+}
+
+#trailer {
+  align-items: center;
+}
+
+#currentMoviePoster {
+  border-radius: 3%;
+}
+
+#video {
+  border-radius: 3%;
+  margin-left: 3%;
+}
+
+#overviewBox {
+  background-color: rgb(217, 202, 179);
+  box-shadow: 10px 5px 5px rgb(140, 122, 107);
+}
+
+#overview {
+  background-color: rgb(144, 50, 61);
+  padding: 0.5%;
+}
+
+#overview-1 {
+  background-color: rgb(217, 202, 179);
+}
+
+#plotBorder {
+  background-color: rgb(144, 50, 61);
+  padding: 0.5%;
+}
+
+#plotMessage {
+  background-color: rgb(217, 202, 179);
+  width: 100%;
+}
+
+#ratingsBox {
+  background-color: rgb(217, 202, 179);
+  box-shadow: 10px 5px 5px rgb(140, 122, 107);
+}
+
+#ratings {
+  background-color: rgb(144, 50, 61);
+  padding: 0.5%;
+}
+
+#ratings-1 {
+  background-color: rgb(217, 202, 179);
+}
+
+.button {
+  margin-top: 15px;
+}
+
+#foot {
+  background-color: rgb(217, 202, 179);
+}
