@@ -1,0 +1,22 @@
+* {
+  font-family: "Cormorant Garamond", serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+time{
+  cursor: default;
+}
+
+nav {
+  background-image: linear-gradient(
+          to left,
+          rgb(94, 11, 21),
+          rgb(217, 202, 179)
+        );
+}

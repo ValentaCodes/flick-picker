@@ -1,28 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Flick Picker</title>
-</head>
-<body>
-<main>
-    <!-- Section for searchbar -->
-    <section id="searchBar">
-        <input type="text" id="movieSearch" />
-        <button id="searchButton">Search</button>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+      style="
+        background-image: linear-gradient(
+          to left,
+          rgb(94, 11, 21),
+          rgb(217, 202, 179)
+        );
+        text-decoration: underline;
+      "
+    >
+      <div class="navbar-brand">
+        <div class="navbar-start">
+          <a
+            id="trending"
+            href="./html/trending.html"
+            class="navbar-item title is-5"
+          >
+            Click Me To See Which Flick Is Trending This Week</a
+          >
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-body has-text-centered">
+        <div id="flickPicker" class="tile is-child box">
+          <p id="flickText" class="title">Flick Picker</p>
+        </div>
+      </div>
     </section>
-    <!-- main movie dashboard section -->
-    <section id="movieDashboard">
-
-    </section>
-    <!-- youtube trailer section -->
-    <section id="trailer">
-
-    </section>
-</main>
-<script src="./script.js"></script>
-<script src="https://apis.google.com/js/api.js"></script>   
-</body>
+    <div id="ancestor" class="tile is-ancestor">
+      <div class="tile is-3 is-vertical is-parent">
+        <div id="searchArea" class="tile is-child box">
+          <p id="searchBar" class="title has-text-centered">Search A Flick</p>
+          <input
+            id="movieSearch"
+            name="movieSearch"
+            class="input is-normal is-rounded"
+            type="text"
+            placeholder="Enter Movie Title"
+          />
+          <button
+            id="searchButton"
+            class="button is-normal is-fullwidth is-rounded"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+        <div id="recentArea" class="tile is-child box">
+          <p class="title is-4">Recently Searched Movies</p>
+          <nav class="" id="previousMoviePosters">
+            <p class="image has-text-centered">
+              <img
+                id="previousPoster"
+                src="https://m.media-amazon.com/images/M/MV5BNTM4NjIxNmEtYWE5NS00NDczLTkyNWQtYThhNmQyZGQzMjM0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
+                alt="Movie Poster"
+              />
+            </p>
+            <p id="prevMovieTitle" class="subtitle has-text-centered is-3">
+              Wakanda Forever
+            </p>
+            <p class="image has-text-centered">
+              <img
+                id="previousPoster"
+                src="https://m.media-amazon.com/images/M/MV5BNjA3NGExZDktNDlhZC00NjYyLTgwNmUtZWUzMDYwMTZjZWUyXkEyXkFqcGdeQXVyMTU1MDM3NDk0._V1_SX300.jpg"
+                alt="Movie Poster"
+              />
+            </p>
+            <p id="prevMovieTitle" class="subtitle has-text-centered is-3">
+              Avatar
+            </p>
+            <p class="image has-text-centered">
+              <img
+                id="previousPoster"
+                src="https://m.media-amazon.com/images/M/MV5BZmRjNDI5NTgtOTIwMC00MzJhLWI4ZTYtMmU0ZTE3ZmRkZDNhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+                alt="Movie Poster"
+              />
+            </p>
+            <p id="prevMovieTitle" class="subtitle has-text-centered is-3">
+              Boyz N The Hood
+            </p>
+          </nav>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div id="flickArea" class="tile is-child box">
+          <p id="flickMessage" class="title has-text-centered">
+            Should you flick?
+          </p>
+          <hr style="background-color: rgb(144, 50, 61)" />
+          <section id="trailer" class="section is-small">
+            <figure class="">
+              <div class="level-item has-text-centered">
+                <!-- THIS IMAGE TAG HOLDS OUR ERROR IMAGE -->
+                <img
+                  class="image is-hidden"
+                  id="errorPoster"
+                  src="/assets/images/poster.jpg"
+                  alt=""
+                  hidden
+                />
+                <img
+                  id="currentMoviePoster"
+                  src="https://m.media-amazon.com/images/M/MV5BNTM4NjIxNmEtYWE5NS00NDczLTkyNWQtYThhNmQyZGQzMjM0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
+                  alt="Movie Poster"
+                />
+                <iframe
+                  id="video"
+                  width="700"
+                  height="440"
+                  src="http://www.youtube.com/embed/_Z3QKkl1WyM"
+                  title="YouTube Video Player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <div id="overviewBox" class="tile is-child box">
+              <p class="title">Overview</p>
+              <article class="tile is-child">
+                <div id="overview" class="box">
+                  <nav id="overview-1" class="level is-mobile">
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p id="genre" class="title is-4">
+                          Action, Adventure, Drama
+                        </p>
+                        <p class="heading">Genre</p>
+                      </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p id="rated" class="title is-4">PG-13</p>
+                        <p class="heading">Rated</p>
+                      </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p id="runtime" class="title is-4">161 m</p>
+                        <p class="heading">length</p>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </article>
+              <br />
+              <article class="message">
+                <div id="plotBorder" class="box">
+                  <div class="message-header">
+                    <p>Plot</p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <div id="plotMessage" class="message-body subtitle is-4">
+                      <p>
+                        The people of Wakanda fight to protect their home from
+                        intervening world powers as they mourn the death of King
+                        T'Challa.,
+                      </p>
+                    </div>
+                  </nav>
+                </div>
+              </article>
+            </div>
+          </section>
+          <br />
+          <div id="ratingsBox" class="tile is-child box">
+            <p class="title">Ratings</p>
+            <article class="tile is-child">
+              <div id="ratings" class="box">
+                <nav id="ratings-1" class="level is-mobile">
+                  <div class="level-item has-text-centered">
+                    <div>
+                      <p id="imdbRating" class="title">7.3/10</p>
+                      <p class="heading">IMDb</p>
+                    </div>
+                  </div>
+                  <div class="level-item has-text-centered">
+                    <div>
+                      <p id="rottenRating" class="title">84%</p>
+                      <p class="heading">Rotten Tomatoes</p>
+                    </div>
+                  </div>
+                  <div class="level-item has-text-centered">
+                    <div>
+                      <p id="metaRating" class="title">67/100</p>
+                      <p class="heading">Metacritic</p>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="foot" class="footer">
+      <div class="title has-text-centered is-5">
+        <p>
+          Made with ❤️ by Andrew Olsen, Cornelius Davis, Kelsey O'Kelley, and
+          Miguel Atanacio.
+        </p>
+      </div>
+      <p class="subtitle has-text-centered">ALL RIGHTS RESERVED</p>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
